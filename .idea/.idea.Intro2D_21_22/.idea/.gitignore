@@ -1,0 +1,13 @@
+﻿# Default ignored files
+/shelf/
+/workspace.xml
+# Rider ignored files
+/projectSettingsUpdater.xml
+/modules.xml
+/contentModel.xml
+/.idea.Intro2D_21_22.iml
+# Datasource local storage ignored files
+/../../../../../../../../../:\Users\benne\UnityProjects\Intro2D_21_22\Intro2D_21_22\.idea\.idea.Intro2D_21_22\.idea/dataSources/
+/dataSources.local.xml
+# Editor-based HTTP Client requests
+/httpRequests/
