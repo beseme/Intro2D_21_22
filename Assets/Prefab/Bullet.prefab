@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1699736891534843840}
   - component: {fileID: 1699736891534843843}
   - component: {fileID: 1699736891534843842}
+  - component: {fileID: 3873784881271306356}
   m_Layer: 6
   m_Name: Bullet
   m_TagString: Untagged
@@ -119,3 +120,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 10
   Direction: {x: 0, y: 0}
+  Damage: 1
+--- !u!58 &3873784881271306356
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1699736891534843845}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
