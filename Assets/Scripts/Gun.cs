@@ -6,12 +6,22 @@ using UnityEngine;
 public class Gun : MonoBehaviour
 {
     public GameObject BulletObject = null;
+    
+    public float Cooldown = .5f;
+
+    private float cooldownRef = 0;
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        cooldownRef -= Time.deltaTime;
+        
+        if (Input.GetKey(KeyCode.Mouse0))
         {
-            shoot();
+            if (cooldownRef <= 0)
+            {
+                shoot();
+                cooldownRef = Cooldown;
+            }
         }
     }
 

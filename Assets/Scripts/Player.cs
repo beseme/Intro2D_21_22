@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
     public void TakeDamage(float damage)
     {
         Health -= damage;
-        Debug.Log(Health);
+       
         if (Health <= 0)
         {
             Destroy(gameObject);

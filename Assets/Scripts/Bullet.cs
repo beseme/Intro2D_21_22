@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+
+    #region Virables
+
     public float Speed = 1;
     [HideInInspector] public Vector2 Direction = Vector2.zero;
 
@@ -13,6 +16,8 @@ public class Bullet : MonoBehaviour
     public float LifeTime = 5;
     
     private Rigidbody2D physics = null;
+
+    #endregion
 
     private void Awake()
     {
@@ -33,7 +38,12 @@ public class Bullet : MonoBehaviour
             var enemy = other.gameObject.GetComponent<Enemy>();
             enemy.TakeDamage(Damage);
         }
-        
+        else if (other.collider.CompareTag("Player"))
+        {
+            var player = other.gameObject.GetComponent<Player>();
+            player.TakeDamage(Damage);
+        }
+
         Destroy(gameObject);
     }
 
