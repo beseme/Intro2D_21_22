@@ -9,7 +9,16 @@ public class Gun : MonoBehaviour
     
     public float Cooldown = .5f;
 
+    public AudioClip clip = null;
+    
     private float cooldownRef = 0;
+
+    private AudioSource source = null;
+
+    private void Awake()
+    {
+        source = GetComponent<AudioSource>();
+    }
 
     private void Update()
     {
@@ -27,6 +36,8 @@ public class Gun : MonoBehaviour
 
     private void shoot()
     {
+        source.PlayOneShot(clip, 1);
+        
         /*Screen to world Point wandelt screen space (UI) ind world space (spiel) um.
          Mausposition ist teil der Input klasse.
          transform.position kann immer abgefragt werden, da wir von monobehaviour erben

@@ -18,6 +18,11 @@ public class RigMovement : MonoBehaviour
     private void Update()
     {
         direction = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            GameManager.Instance.PauseMusic();
+        }
     }
 
     private void FixedUpdate()
