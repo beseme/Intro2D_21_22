@@ -14,15 +14,17 @@ public class Bullet : MonoBehaviour
     public float Damage = 1;
 
     public float LifeTime = 5;
+
+    public AudioClip ExplodeSFX = null;
     
     private Rigidbody2D physics = null;
-
+    
     #endregion
 
-    private void Awake()
+
+    private void OnEnable()
     {
         physics = GetComponent<Rigidbody2D>();
-
         StartCoroutine(_iDestroyBullet());
     }
 
@@ -44,6 +46,8 @@ public class Bullet : MonoBehaviour
             player.TakeDamage(Damage);
         }
 
+        SoundManager.Instance.PlayBasic(ExplodeSFX, .2f);
+        
         Destroy(gameObject);
     }
 

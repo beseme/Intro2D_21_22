@@ -9,7 +9,7 @@ public class Gun : MonoBehaviour
     
     public float Cooldown = .5f;
 
-    public AudioClip clip = null;
+    public AudioClip ShootSFX = null;
     
     private float cooldownRef = 0;
 
@@ -36,7 +36,7 @@ public class Gun : MonoBehaviour
 
     private void shoot()
     {
-        source.PlayOneShot(clip, 1);
+        source.PlayOneShot(ShootSFX);
         
         /*Screen to world Point wandelt screen space (UI) ind world space (spiel) um.
          Mausposition ist teil der Input klasse.

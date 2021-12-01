@@ -21,7 +21,7 @@ public class RigMovement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            GameManager.Instance.PauseMusic();
+            GameManager.Instance.PauseBGM();
         }
     }
 

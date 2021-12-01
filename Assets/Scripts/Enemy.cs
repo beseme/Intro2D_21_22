@@ -10,8 +10,17 @@ public class Enemy : MonoBehaviour
     public GameObject BulletObject = null;
     public float Cooldown = .5f;
 
+    public AudioClip ShootSFX = null;
+    
     private bool shotFired = false;
     private float cooldownRef = 0;
+    
+    private AudioSource source = null;
+    
+    private void Awake()
+    {
+        source = GetComponent<AudioSource>();
+    }
     
     public void TakeDamage(float damage)
     {
@@ -50,6 +59,7 @@ public class Enemy : MonoBehaviour
 
     private void shoot()
     {
+        source.PlayOneShot(ShootSFX);
         // Winkel zwischen Spieler und Gegner
         Vector2 aimAt = GameManager.Instance.Player.transform.position - transform.position;
 

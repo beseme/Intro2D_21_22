@@ -10,18 +10,21 @@ public class GameManager : MonoBehaviour
     public GameObject Player;
 
     public AudioSource BGM = null;
-
+    
     private void Awake()
     {
         Instance = this;
     }
 
-    public void PauseMusic()
+    public void PauseBGM()
     {
-        if(BGM.isPlaying)
+        if (BGM.isPlaying)
+        {
             BGM.Pause();
+        }
         else
+        {
             BGM.UnPause();
-        
+        }
     }
 }

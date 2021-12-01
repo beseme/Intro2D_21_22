@@ -122,6 +122,7 @@ MonoBehaviour:
   Direction: {x: 0, y: 0}
   Damage: 1
   LifeTime: 5
+  ExplodeSFX: {fileID: 8300000, guid: 8b1b88e4786012f48845ae7f395021b1, type: 3}
 --- !u!58 &3873784881271306356
 CircleCollider2D:
   m_ObjectHideFlags: 0
