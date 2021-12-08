@@ -6,11 +6,15 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public float Health = 10;
-
+    
     public GameObject BulletObject = null;
     public float Cooldown = .5f;
 
+    public EnemyHPBar HPBar = null;
+    
     public AudioClip ShootSFX = null;
+
+    private float maxHealth = 0;
     
     private bool shotFired = false;
     private float cooldownRef = 0;
@@ -20,11 +24,15 @@ public class Enemy : MonoBehaviour
     private void Awake()
     {
         source = GetComponent<AudioSource>();
+
+        maxHealth = Health;
     }
     
     public void TakeDamage(float damage)
     {
         Health -= damage;
+        
+        HPBar.MapHealth(maxHealth, Health);
 
         if (Health <= 0)
         {
